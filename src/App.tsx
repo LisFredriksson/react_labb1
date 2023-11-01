@@ -1,23 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { CreateUser } from './components/CreateUser';
+import { UserList } from './components/UserList';
+import { UpdateUser } from './components/UpdateUser';
 
 function App() {
+  const [isFormVisible, setFormVisible] = useState(false);
+  const [userData, setUserData] = useState(null);
+
+  const showUpdateForm = (user) => {
+    if (isFormVisible === false) {
+      setUserData(user);
+      setFormVisible(true);
+    } else {
+      setFormVisible(false);
+    }
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <CreateUser />
+        <UserList showUpdateForm={showUpdateForm}/>
+        {isFormVisible && userData && (
+        <UpdateUser user={userData} />
+       )}
       </header>
     </div>
   );

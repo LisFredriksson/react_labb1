@@ -1,0 +1,49 @@
+.list{
+    text-align: left;
+    list-style: none;
+}
+
+.btn {
+	background-color: white;
+	padding: 2px 3px;
+    margin-left: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    border: 1px solid rgb(97, 96, 96);
+    cursor: pointer;
+    float: right;
+    margin-top: 7px;
+}
+.btn:hover {
+	border: 1px solid black;
+    box-shadow: 0 0.5rem 0.8rem -0.2rem rgba(0,0,0,.8);
+}
+.reloadBtn {
+	background-color: #ffffff;
+	color: rgba(18, 18, 18, 0.9);
+	font-size: 0.5rem;
+	font-weight: 600;
+	padding: 0.5rem 1.6rem;
+	border-radius: 2rem;
+    border: none;
+	font-family: verdana;
+    margin-top: 7px;
+    align-self: center;
+	box-shadow: 0 0.1rem 0.4rem -0.2rem rgba(55, 54, 54, 0.8);
+	transition: all 0.2s ease-in-out;
+}
+
+/** ::hover pseudo element */
+.reloadBtn:hover {
+	background-color: #e0e3ea;
+}
+
+/** ::active pseudo element */
+.reloadBtn:active {
+	transform: scale(0.95);
+}
+
+.userHeaderContainer{
+    display: flex;
+    gap: 10px;
+}
